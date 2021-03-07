@@ -1,8 +1,9 @@
 import React from 'react';
-// import { Jumbotron, Button } from 'react-bootstrap';
 import {SpaceXcards} from '../spacex-cards/Spacex-cards.comp';
+import { MDBJumbotron, MDBContainer, MDBCol } from "mdbreact";
 
 import './spacex-list.styles.scss';
+
 // import {Navbar} from '../navbar/navbar';
 // import {SearchBox} from './../searchbox/searchbox.jsx';
 // import {SearchBox} from './components/searchbox/searchbox.jsx';
@@ -16,27 +17,22 @@ import './spacex-list.styles.scss';
 //     this.setState({searchField: e.target.value})
 //   }
 
-export const SpaceXlist =(props)=> {
+export const SpaceXlist =(props, id)=> {
     return (
                 <>
-
-
-                <div className="space-img">
-                   
-                    
-                </div>
-                {/* <SearchBox
-                className='search'
-                placeholder=' mission names'
-                handleChange={this.handleChange}
-                /> */}
-                <div className="card-list">
-                        {props.launches.map(launch => (
-                            
-                            <SpaceXcards launch={launch} />
-                        )
-                            )}
-                    </div>
+        
+     <MDBJumbotron fluid>
+     <MDBCol style={{ maxWidth: "55rem" }}>
+      <MDBContainer>
+             <div className="card-list">
+                                {props.launches.map(launch => (
+                                    <SpaceXcards key={id}  launch={launch} />
+                                )
+                                    )}
+                            </div>
+      </MDBContainer>
+      </MDBCol>
+    </MDBJumbotron>
                
                
                 {/* <h2 className="spacex-footer"> SpaceX 2021</h2>  */}
