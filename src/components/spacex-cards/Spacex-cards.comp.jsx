@@ -54,7 +54,7 @@ export const SpaceXcards = (props) => {
               <MDBCardText>
 
                 <MDBCardText>
-                 ID: {props.launch.rocket.rocket_id}
+                Rocket ID: {props.launch.rocket.rocket_id}
               </MDBCardText>
               
 
