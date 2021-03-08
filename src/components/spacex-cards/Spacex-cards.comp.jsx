@@ -25,7 +25,7 @@ export const SpaceXcards = (props) => {
                  {props.launch.mission_name} </strong>
             </MDBCardTitle>
             <MDBCardTitle className="indigo-text h5 m-4">
-                MISSION PATCH
+                MISSION PATCH 
               </MDBCardTitle>
 
             <MDBContainer   className="flex-center">
@@ -47,9 +47,21 @@ export const SpaceXcards = (props) => {
 
             <MDBCardBody>
               <MDBCardTitle className="indigo-text m-4">
-               <h2>Rocket details </h2> 
+               <h2>Rocket details
+               
+                  </h2> 
               </MDBCardTitle>
 
+              <MDBCardText>
+                Launch year: {props.launch.launch_year}
+              </MDBCardText>
+              <MDBCardText>
+                Unix date: {props.launch.launch_date_unix}
+              </MDBCardText>
+
+              <MDBCardText>
+                Launch window: {props.launch.launch_window}
+              </MDBCardText>
 
               <MDBCardText>
 
@@ -57,19 +69,31 @@ export const SpaceXcards = (props) => {
                 Rocket ID: {props.launch.rocket.rocket_id}
               </MDBCardText>
               
+               
+              
+
+                  <MDBCardText>
+                  Rocket name: {props.launch.rocket.rocket_name}
+                  </MDBCardText>
+
+                                            <MDBCardText>
+                                            {/* Rocket name: {props.launch.second_stage.payloads.norad_id} */}
+                                            </MDBCardText>
+
 
               <MDBCardText>
-               Name: {props.launch.rocket.rocket_name}
-              </MDBCardText>
-              <MDBCardText>
-                Type: {props.launch.rocket.rocket_type}
+                Rocket type: {props.launch.rocket.rocket_type}
 
                </MDBCardText>
             
 
+               {/* site_name */}
            
-           
-
+              <MDBCardText> 
+                Launch site name: 
+              <span>  {props.launch.launch_site.site_name}</span>
+              </MDBCardText>
+ 
               <MDBCardText> 
                 Launch site: 
               <span>  {props.launch.launch_site.site_name_long}</span>
@@ -99,10 +123,7 @@ export const SpaceXcards = (props) => {
                 <a href={props.launch.links.video_link}>  Youtube </a>
               </MDBCardText>
 
-   
 
-           
-          
          
             </MDBCardBody>
           </MDBJumbotron>
