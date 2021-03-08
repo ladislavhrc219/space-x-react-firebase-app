@@ -4,8 +4,9 @@ import FormInput from './../form-input/Form-input.comp';
 import CustomButton from './../custom-button/Custom-button.comp';
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
-import './sign-in.styles.scss';
+// import './sign-in.styles.scss';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -38,7 +39,13 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className='sign-in'>
+
+      <MDBContainer>
+      <MDBRow>
+        <MDBCol md="10">
+          <MDBCard style={{ margin: "5px" }}>
+            <MDBCardBody>
+      {/* <div className='sign-in'> */}
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
 
@@ -66,7 +73,13 @@ class SignIn extends React.Component {
             </CustomButton>
           </div>
         </form>
-      </div>
+      {/* </div> */}
+      </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
+
     );
   }
 }

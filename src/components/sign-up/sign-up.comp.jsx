@@ -4,6 +4,7 @@ import FormInput from './../form-input/Form-input.comp';
 import CustomButton from './../custom-button/Custom-button.comp';
 
 import { auth, createUserProfileDocument } from './../../firebase/firebase.utils';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 import './sign-up.styles.scss';
 
@@ -57,7 +58,12 @@ class SignUp extends React.Component {
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
-      <div className='sign-up'>
+      <MDBContainer>
+      <MDBRow>
+        <MDBCol md="10">
+          <MDBCard style={{ margin: "5px" }}>
+            <MDBCardBody>
+      {/* <div className='sign-up'> */}
         <h2 className='title'>I do not have a account</h2>
         <span>Sign up with your email and password</span>
         <form className='sign-up-form' onSubmit={this.handleSubmit}>
@@ -95,7 +101,13 @@ class SignUp extends React.Component {
           />
           <CustomButton type='submit'>SIGN UP</CustomButton>
         </form>
-      </div>
+      {/* </div> */}
+
+      </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
     );
   }
 }
