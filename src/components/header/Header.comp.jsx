@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from './SpaceX_logo_blackwhite.svg';
 // import {withRouter} from "react-router-dom"
+import { MDBCardText, MDBContainer, Jumbotron } from "mdbreact";
 
 import {auth} from './../../firebase/firebase.utils';
 // import Homepage from '../../pages/Homepage.comp';
@@ -9,11 +10,18 @@ import './header.styles.scss';
 
 const Header = ({currentUser}) => (
   <>
- 
-    <div className='header'>
-    <Link className='logo-container' to='/'>
+ <Jumbotron fluid>
+ <Link className='logo-container' to='/'>
       <Logo className='logo' />
     </Link>
+
+   
+</Jumbotron>
+
+<div className='header'>
+    {/* <Link className='logo-container' to='/'> */}
+      {/* <Logo className='logo' /> */}
+    {/* </Link> */}
 
     <div className='options'>
       
@@ -41,6 +49,11 @@ const Header = ({currentUser}) => (
     </div>
   </div>
 
+
+
+{/* </MDBContainer> */}
+
+  
 
   
 

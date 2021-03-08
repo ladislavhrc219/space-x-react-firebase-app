@@ -36,11 +36,12 @@ class LaunchesDirectory extends Component {
       }
       componentDidMount(){
         fetch('https://api.spacexdata.com/v3/launches')
+        // fetch('https://api.spacexdata.com/v3/rockets')
         .then(response=>response.json())
         .then(data=> this.setState({launches:data}));
-       
+     
       }
-
+     
       
     
       
@@ -52,7 +53,7 @@ class LaunchesDirectory extends Component {
         console.log(this.state);
         
         const {launches, searchField} = this.state;
-
+        
         // launches
         const filteredLaunches = launches.filter(launch => 
           launch.mission_name.toLowerCase().includes(searchField.toLowerCase())
